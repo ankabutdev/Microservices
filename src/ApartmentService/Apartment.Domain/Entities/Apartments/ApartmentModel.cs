@@ -2,7 +2,7 @@
 
 namespace Apartment.Domain.Entities.Apartments;
 
-public class Apartment : BaseEntity
+public class ApartmentModel : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
 

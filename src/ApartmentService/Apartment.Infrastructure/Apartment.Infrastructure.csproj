@@ -11,4 +11,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Apartment.Application\Apartment.Application.csproj" />
+  </ItemGroup>
+
 </Project>
