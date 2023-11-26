@@ -1,4 +1,5 @@
-﻿using Apartment.Domain.Entities.Apartments;
+﻿using Apartment.Application.Interfaces.Apartments;
+using Apartment.Domain.Entities.Apartments;
 using Apartment.Infrastructure.DTOs.Apartments;
 using Apartment.Infrastructure.Interfaces.Apartments;
 
@@ -6,15 +7,15 @@ namespace Apartment.Infrastructure.Services.Apartments;
 
 public class ApartmentService : IApartmentService
 {
-    private readonly IApartmentService _service;
+    private readonly IApartmentRepository _repository;
 
-    public ApartmentService(IApartmentService service)
+    public ApartmentService(IApartmentRepository repository)
     {
-        _service = service;
+        _repository = repository;
     }
 
     public async ValueTask<long> CountAsync()
-        => await _service.CountAsync();
+        => await _repository.CountAsync();
 
     public ValueTask<bool> CreateAsync(ApartmentCreateDto dto)
     {
