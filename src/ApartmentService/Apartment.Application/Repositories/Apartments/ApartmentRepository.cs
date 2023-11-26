@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Apartment.Application.Repositories.Apartments;
 
+#pragma warning disable
+
 public class ApartmentRepository : IApartmentRepository
 {
     private readonly ApartmentDbContext _dbContext;
@@ -35,6 +37,9 @@ public class ApartmentRepository : IApartmentRepository
         _dbContext.Apartments.Remove(entity);
         return await _dbContext.SaveChangesAsync();
     }
+
+    public async ValueTask<IEnumerable<ApartmentModel>> GetAllAsync()
+        => await _dbContext.Apartments.ToListAsync();
 
     public async ValueTask<ApartmentModel> GetByIdAsync(long id)
         => await _dbContext.Apartments.FirstOrDefaultAsync(x => x.Id == id);

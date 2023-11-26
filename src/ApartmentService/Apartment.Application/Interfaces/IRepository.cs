@@ -2,6 +2,8 @@
 
 public interface IRepository<TEntity>
 {
+    public ValueTask<IEnumerable<TEntity>> GetAllAsync();
+
     public ValueTask<int> CreateAsync(TEntity entity);
 
     public ValueTask<int> UpdateAsync(TEntity entity);
