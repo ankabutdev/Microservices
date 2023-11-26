@@ -9,7 +9,7 @@ public interface IApartmentService
 
     public ValueTask<bool> CreateAsync(ApartmentCreateDto dto);
 
-    public ValueTask<bool> UpdateAsync(ApartmentUpdateDto dto);
+    public ValueTask<bool> UpdateAsync(long apartmentId, ApartmentUpdateDto dto);
 
     public ValueTask<bool> DeleteAsync(long id);
 
