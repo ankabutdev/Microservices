@@ -11,4 +11,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Car.Application\Car.Application.csproj" />
+  </ItemGroup>
+
 </Project>

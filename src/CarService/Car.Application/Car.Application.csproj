@@ -11,4 +11,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Car.Domain\Car.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
