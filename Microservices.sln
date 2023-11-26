@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{72FE6C75-8C8C-4E1F-8139-B83ADC5A8AA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarService", "CarService", "{0D6818BE-00B5-485D-BFBB-E98C44D7E3D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SchoolService", "SchoolService", "{1AF9985C-DE35-4577-98C0-523A92E86D87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApartmentService", "ApartmentService", "{81329C88-D5D9-441B-9A91-74BBBD7CAA3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TourismService", "TourismService", "{8B141F76-F5E8-4E99-9DE5-A75E406EB43A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apartment.API", "src\ApartmentService\Apartment.API\Apartment.API.csproj", "{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car.API", "src\CarService\Car.API\Car.API.csproj", "{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.API", "src\SchoolService\School.API\School.API.csproj", "{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism.API", "src\TourismService\Tourism.API\Tourism.API.csproj", "{A8A5077D-A678-47FD-BB11-8D1CB0B60553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A5077D-A678-47FD-BB11-8D1CB0B60553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A5077D-A678-47FD-BB11-8D1CB0B60553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A5077D-A678-47FD-BB11-8D1CB0B60553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A5077D-A678-47FD-BB11-8D1CB0B60553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D6818BE-00B5-485D-BFBB-E98C44D7E3D5} = {72FE6C75-8C8C-4E1F-8139-B83ADC5A8AA0}
+		{1AF9985C-DE35-4577-98C0-523A92E86D87} = {72FE6C75-8C8C-4E1F-8139-B83ADC5A8AA0}
+		{81329C88-D5D9-441B-9A91-74BBBD7CAA3A} = {72FE6C75-8C8C-4E1F-8139-B83ADC5A8AA0}
+		{8B141F76-F5E8-4E99-9DE5-A75E406EB43A} = {72FE6C75-8C8C-4E1F-8139-B83ADC5A8AA0}
+		{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484} = {81329C88-D5D9-441B-9A91-74BBBD7CAA3A}
+		{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F} = {0D6818BE-00B5-485D-BFBB-E98C44D7E3D5}
+		{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC} = {1AF9985C-DE35-4577-98C0-523A92E86D87}
+		{A8A5077D-A678-47FD-BB11-8D1CB0B60553} = {8B141F76-F5E8-4E99-9DE5-A75E406EB43A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AD157C4-8004-4ADE-A523-DAF1057D97F9}
+	EndGlobalSection
+EndGlobal
