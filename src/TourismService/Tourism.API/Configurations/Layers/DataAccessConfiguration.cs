@@ -9,11 +9,15 @@ public static class DataAccessConfiguration
 {
     public static void ConfigureDataAccess(this WebApplicationBuilder builder)
     {
+        var connectionstring = builder.Configuration.GetConnectionString("Default")!;
+
         builder.Services.AddDbContext<TouristDbContext>(options =>
         {
             options.UseMySql(
-                builder.Configuration.GetConnectionString("Default"),
-                new MySqlServerVersion(new Version(8, 0, 26))
+                builder.Configuration.GetConnectionString(connectionstring),
+                //Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql")
+                new MySqlServerVersion(new Version(8, 0, 30))
+                //ServerVersion.AutoDetect(connectionstring)
             );
         });
 
