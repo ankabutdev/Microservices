@@ -1,52 +1,73 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 using School.Application.Data;
 using School.Application.Interfaces.Schools;
 using School.Domain.Entities.Students;
 
 namespace School.Application.Repositories.Schools;
 
-#pragma warning disable
-
 public class SchoolRepository : ISchoolRepository
 {
-    private readonly SchoolDbContext _dbContext;
+    private readonly MongoDbContext<SchoolModel> _schoolDbContext;
+    private readonly MongoDbContext<CounterModel> _counterDbContext;
 
-    public SchoolRepository(SchoolDbContext dbContext)
+    public SchoolRepository(
+        MongoDbContext<SchoolModel> schoolDbContext,
+        MongoDbContext<CounterModel> counterDbContext)
     {
-        _dbContext = dbContext;
+        _schoolDbContext = schoolDbContext;
+        _counterDbContext = counterDbContext;
     }
 
     public async ValueTask<long> CountAsync()
-        => await _dbContext.Schools.LongCountAsync();
+        => await _schoolDbContext.Collection.CountDocumentsAsync(FilterDefinition<SchoolModel>.Empty);
 
     public async ValueTask<long> CreateAsync(SchoolModel entity)
     {
-        await _dbContext.Schools.AddAsync(entity);
-        return await _dbContext.SaveChangesAsync();
+        await _schoolDbContext.Collection.InsertOneAsync(entity);
+        return 1;
     }
 
     public async ValueTask<long> DeleteAsync(long id)
     {
-        var entity = await _dbContext
-            .Schools
-            .FirstOrDefaultAsync(x => x.Id == id);
-
-        if (entity is null)
-            return 0;
-
-        _dbContext.Schools.Remove(entity);
-        return await _dbContext.SaveChangesAsync();
+        var filter = Builders<SchoolModel>.Filter.Eq(x => x.Id, id);
+        var result = await _schoolDbContext.Collection.DeleteOneAsync(filter);
+        return result.DeletedCount;
     }
 
     public async ValueTask<IEnumerable<SchoolModel>> GetAllAsync()
-        => await _dbContext.Schools.ToListAsync();
+    {
+        return await _schoolDbContext.Collection.Find(_ => true).ToListAsync();
+    }
 
     public async ValueTask<SchoolModel> GetByIdAsync(long id)
-        => await _dbContext.Schools.FirstOrDefaultAsync(x => x.Id == id);
+    {
+        var filter = Builders<SchoolModel>.Filter.Eq(x => x.Id, id);
+        return await _schoolDbContext.Collection.Find(filter).FirstOrDefaultAsync();
+    }
 
     public async ValueTask<long> UpdateAsync(SchoolModel entity)
     {
-        _dbContext.Schools.Update(entity);
-        return await _dbContext.SaveChangesAsync();
+        var filter = Builders<SchoolModel>.Filter.Eq(x => x.Id, entity.Id);
+        var result = await _schoolDbContext.Collection.ReplaceOneAsync(filter, entity);
+        return result.ModifiedCount;
+    }
+
+    public async ValueTask<long> IncrementCounterAsync()
+    {
+        var filter = Builders<CounterModel>.Filter.Empty;
+        var update = Builders<CounterModel>.Update.Inc(x => x.Value, 1);
+
+        var options = new FindOneAndUpdateOptions<CounterModel, CounterModel>
+        {
+            IsUpsert = true,
+            ReturnDocument = ReturnDocument.After
+        };
+
+        var result = await _counterDbContext
+            .Collection
+            .FindOneAndUpdateAsync(filter, update, options);
+
+        return result.Value;
     }
 }
