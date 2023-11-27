@@ -13,37 +13,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApartmentService", "Apartme
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TourismService", "TourismService", "{8B141F76-F5E8-4E99-9DE5-A75E406EB43A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apartment.API", "src\ApartmentService\Apartment.API\Apartment.API.csproj", "{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apartment.API", "src\ApartmentService\Apartment.API\Apartment.API.csproj", "{9A79A2FD-3EA3-4224-BA37-CE7A2D7D5484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car.API", "src\CarService\Car.API\Car.API.csproj", "{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.API", "src\CarService\Car.API\Car.API.csproj", "{ADE8F7E1-1A81-4F41-9C15-E2C7125E8D3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.API", "src\SchoolService\School.API\School.API.csproj", "{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.API", "src\SchoolService\School.API\School.API.csproj", "{05BF8C1C-49AD-4A47-A9BB-FC88B87FD7FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism.API", "src\TourismService\Tourism.API\Tourism.API.csproj", "{A8A5077D-A678-47FD-BB11-8D1CB0B60553}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourism.API", "src\TourismService\Tourism.API\Tourism.API.csproj", "{A8A5077D-A678-47FD-BB11-8D1CB0B60553}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apartment.Domain", "src\ApartmentService\Apartment.Domain\Apartment.Domain.csproj", "{A1ABDCD8-C9DD-469B-B034-B46D09408152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apartment.Domain", "src\ApartmentService\Apartment.Domain\Apartment.Domain.csproj", "{A1ABDCD8-C9DD-469B-B034-B46D09408152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apartment.Application", "src\ApartmentService\Apartment.Application\Apartment.Application.csproj", "{3666DC81-3917-46DD-9942-69108B42561B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apartment.Application", "src\ApartmentService\Apartment.Application\Apartment.Application.csproj", "{3666DC81-3917-46DD-9942-69108B42561B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apartment.Infrastructure", "src\ApartmentService\Apartment.Infrastructure\Apartment.Infrastructure.csproj", "{4267D35C-3D3E-4815-B3E3-3CD90E329399}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apartment.Infrastructure", "src\ApartmentService\Apartment.Infrastructure\Apartment.Infrastructure.csproj", "{4267D35C-3D3E-4815-B3E3-3CD90E329399}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car.Domain", "src\CarService\Car.Domain\Car.Domain.csproj", "{9273CD14-AAEC-49D4-8FF8-D3F568885F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.Domain", "src\CarService\Car.Domain\Car.Domain.csproj", "{9273CD14-AAEC-49D4-8FF8-D3F568885F90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car.Application", "src\CarService\Car.Application\Car.Application.csproj", "{19F376F3-89D6-45FD-9250-1147A4CA0ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.Application", "src\CarService\Car.Application\Car.Application.csproj", "{19F376F3-89D6-45FD-9250-1147A4CA0ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car.Infrastracture", "src\CarService\Car.Infrastracture\Car.Infrastracture.csproj", "{76863024-6D27-4A9A-97E6-9F4C235B93FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.Infrastracture", "src\CarService\Car.Infrastracture\Car.Infrastracture.csproj", "{76863024-6D27-4A9A-97E6-9F4C235B93FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Domain", "src\SchoolService\School.Domain\School.Domain.csproj", "{30AE49A5-6E4B-40C2-8BFB-0B66C72A7439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Domain", "src\SchoolService\School.Domain\School.Domain.csproj", "{30AE49A5-6E4B-40C2-8BFB-0B66C72A7439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Application", "src\SchoolService\School.Application\School.Application.csproj", "{FE462CEC-B583-4794-BB2C-C424C2EA4381}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Application", "src\SchoolService\School.Application\School.Application.csproj", "{FE462CEC-B583-4794-BB2C-C424C2EA4381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Infrastracture", "src\SchoolService\School.Infrastracture\School.Infrastracture.csproj", "{551F0A31-A474-44BA-B35F-3CDE597F0FD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Infrastracture", "src\SchoolService\School.Infrastracture\School.Infrastracture.csproj", "{551F0A31-A474-44BA-B35F-3CDE597F0FD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism.Domain", "src\TourismService\Tourism.Domain\Tourism.Domain.csproj", "{4551E005-5B55-487B-BACE-F393D76E8E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourism.Domain", "src\TourismService\Tourism.Domain\Tourism.Domain.csproj", "{4551E005-5B55-487B-BACE-F393D76E8E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism.Application", "src\TourismService\Tourism.Application\Tourism.Application.csproj", "{41716581-306B-4548-9D3A-2432A49A8ED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourism.Application", "src\TourismService\Tourism.Application\Tourism.Application.csproj", "{41716581-306B-4548-9D3A-2432A49A8ED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourism.Infrastructure", "src\TourismService\Tourism.Infrastructure\Tourism.Infrastructure.csproj", "{C791B827-54A2-41A8-9083-E8680957C3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourism.Infrastructure", "src\TourismService\Tourism.Infrastructure\Tourism.Infrastructure.csproj", "{C791B827-54A2-41A8-9083-E8680957C3ED}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B19A30C7-6458-4D7A-A92A-87949C70594F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +117,10 @@ Global
 		{C791B827-54A2-41A8-9083-E8680957C3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C791B827-54A2-41A8-9083-E8680957C3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C791B827-54A2-41A8-9083-E8680957C3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19A30C7-6458-4D7A-A92A-87949C70594F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19A30C7-6458-4D7A-A92A-87949C70594F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19A30C7-6458-4D7A-A92A-87949C70594F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19A30C7-6458-4D7A-A92A-87949C70594F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
