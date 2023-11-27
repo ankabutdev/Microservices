@@ -15,6 +15,7 @@ builder.Services.AddDbContext<TouristDbContext>(options =>
     );
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
