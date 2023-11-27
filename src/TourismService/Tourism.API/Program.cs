@@ -1,5 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Tourism.Application.Data;
+using School.API.Configurations.Layers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,14 +6,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<TouristDbContext>(options =>
-{
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("Default"),
-        new MySqlServerVersion(new Version(8, 0, 26))
-    );
-});
-
+builder.ConfigureDataAccess();
+builder.ConfigureService();
 
 var app = builder.Build();
 

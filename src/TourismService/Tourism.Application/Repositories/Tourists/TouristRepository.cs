@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tourism.Application.Data;
-using Tourism.Application.Interfaces;
+using Tourism.Application.Interfaces.Tourits;
 using Tourism.Domain.Entities.Tourists;
 
-public class TouristRepository : IRepository<Tourist>
+public class TouristRepository : ITouristRepository
 {
     private readonly TouristDbContext _dbContext;
 
