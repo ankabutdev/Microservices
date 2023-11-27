@@ -1,8 +1,8 @@
 ﻿namespace School.Domain.Exceptions.Schools;
 
-public class SchoolnotFoundException : NotFoundException
+public class SchoolNotFoundException : NotFoundException
 {
-    public SchoolnotFoundException()
+    public SchoolNotFoundException()
     {
         TitleMessage = "School not found!";
     }

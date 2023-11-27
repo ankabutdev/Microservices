@@ -57,7 +57,7 @@ public class CarService : ICarService
     }
     public async ValueTask<bool> UpdateAsync(long carId, CarUpdateDto dto)
     {
-        // Check if the apartment exists
+        // Check if the Car exists
         var existingCar = await _repository.GetByIdAsync(carId);
 
         if (existingCar == null)
@@ -70,7 +70,7 @@ public class CarService : ICarService
         // Update the UpdatedAt property
         existingCar.UpdatedAt = DateTime.UtcNow;
 
-        // Update the apartment in the repository
+        // Update the Car in the repository
         var result = await _repository.UpdateAsync(existingCar);
 
         return result > 0;
