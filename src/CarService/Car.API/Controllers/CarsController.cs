@@ -19,7 +19,7 @@ public class CarsController : ControllerBase
     public async ValueTask<IActionResult> GetAllAsync()
         => Ok(await _service.GetAllAsync());
 
-    [HttpGet("{id}")]
+    [HttpGet("{carId}")]
     public async ValueTask<IActionResult> GetByIdAsync(long carId)
         => Ok(await _service.GetByIdAsync(carId));
 
@@ -35,7 +35,7 @@ public class CarsController : ControllerBase
     public async ValueTask<IActionResult> UpdateAsync(long carId, CarUpdateDto dto)
         => Ok(await _service.UpdateAsync(carId, dto));
 
-    [HttpDelete]
+    [HttpDelete("{carId}")]
     public async ValueTask<IActionResult> DeleteAsync(long carId)
         => Ok(await _service.DeleteAsync(carId));
 }
