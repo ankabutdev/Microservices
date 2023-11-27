@@ -11,7 +11,7 @@ public interface ICarService
 
     public ValueTask<IEnumerable<CarModel>> GetAllAsync();
 
-    public ValueTask<bool> CreateAsync(CarUpdateDto dto);
+    public ValueTask<bool> CreateAsync(CarCreateDto dto);
 
     public ValueTask<bool> UpdateAsync(long carId, CarUpdateDto dto);
 

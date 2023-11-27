@@ -22,7 +22,7 @@ public class CarService : ICarService
     public async ValueTask<long> CountAsync()
         => await _repository.CountAsync();
 
-    public async ValueTask<bool> CreateAsync(CarUpdateDto dto)
+    public async ValueTask<bool> CreateAsync(CarCreateDto dto)
     {
         if (dto is null)
             return false;
