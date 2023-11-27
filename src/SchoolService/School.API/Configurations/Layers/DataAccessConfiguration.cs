@@ -1,19 +1,13 @@
-﻿using School.Application.Data;
-using School.Application.Interfaces.Schools;
-using School.Application.Repositories.Schools;
+﻿using School.Application.Interfaces.Schools;
 
 namespace School.API.Configurations.Layers;
 
 public static class DataAccessConfiguration
 {
-    public static void ConfigureDataAccess(this IHostBuilder builder)
+    public static void ConfigureDataAccess(this WebApplicationBuilder builder)
     {
-        builder.ConfigureServices((context, services) =>
-        {
-            services.Configure<MongoDbSettings>(context.Configuration.GetSection("MongoDb"));
-            services.AddScoped(typeof(MongoDbContext<>));
-            services.AddScoped<ISchoolRepository, SchoolRepository>();
-            services.AddScoped<MongoDbContext<CounterModel>>();
-        });
+        builder.Services.AddAutoMapper(typeof(MappingConfiguration));
+
+        builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
     }
 }
