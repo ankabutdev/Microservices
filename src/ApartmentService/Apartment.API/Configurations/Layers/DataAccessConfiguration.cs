@@ -9,12 +9,16 @@ public static class DataAccessConfiguration
 {
     public static void ConfigureDataAccess(this WebApplicationBuilder builder)
     {
-        var dbHost = Environment.GetEnvironmentVariable("DB_HOST"); 
+        var connectionString = builder.Configuration.GetConnectionString("DockerConnection");
 
-        // Get Connection String from appsettings.json
         builder.Services.AddDbContext<ApartmentDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlServer(connectionString,
+                sqlServerOptionsAction: sql =>
+                {
+                    sql.MigrationsAssembly("Apartment.API");
+                });
+
         });
 
         // AutoMapping

@@ -1,29 +1,22 @@
 version: '3.4'
 
 services:
-  apartmentdb:
-    container_name: apartment-db
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    ports:
-       - 8002:1433
+
+  sqldata:
+    volumes:
+    - ./db:/var/opt/mssql/data
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
     environment:
-       - ACCEPT_EULA=Y
-       - MSSQL_SA_PASSWORD=Ankabut20040730
-      
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - "7773:1433"
+
   apartment.api:
-    container_name: apartment-api
     image: ${DOCKER_REGISTRY-}apartmentapi
     build:
       context: .
       dockerfile: src/ApartmentService/Apartment.API/Dockerfile
-    ports:
-       - 8001:8080 
-    depends_on:
-      - apartmentdb
-    environment: 
-        - DB_HOST=apartmentdb
-        - DB_NAME=ApartmentDb
-        - DB_SA_PASSWORD=Ankabut20040730 
 
       #----------------------------
   car.api:
@@ -49,4 +42,3 @@ services:
     build:
       context: .
       dockerfile: src/TourismService/Tourism.API/Dockerfile
-

@@ -17,36 +17,36 @@ public class ApartmentRepository : IApartmentRepository
     }
 
     public async ValueTask<long> CountAsync()
-        => await _dbContext.Apartments.LongCountAsync();
+        => await _dbContext.ApartmentModel.LongCountAsync();
 
     public async ValueTask<int> CreateAsync(ApartmentModel entity)
     {
-        await _dbContext.Apartments.AddAsync(entity);
+        await _dbContext.ApartmentModel.AddAsync(entity);
         return await _dbContext.SaveChangesAsync();
     }
 
     public async ValueTask<int> DeleteAsync(long id)
     {
         var entity = await _dbContext
-            .Apartments
+            .ApartmentModel
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (entity is null)
             return 0;
 
-        _dbContext.Apartments.Remove(entity);
+        _dbContext.ApartmentModel.Remove(entity);
         return await _dbContext.SaveChangesAsync();
     }
 
     public async ValueTask<IEnumerable<ApartmentModel>> GetAllAsync()
-        => await _dbContext.Apartments.ToListAsync();
+        => await _dbContext.ApartmentModel.ToListAsync();
 
     public async ValueTask<ApartmentModel> GetByIdAsync(long id)
-        => await _dbContext.Apartments.FirstOrDefaultAsync(x => x.Id == id);
+        => await _dbContext.ApartmentModel.FirstOrDefaultAsync(x => x.Id == id);
 
     public async ValueTask<int> UpdateAsync(ApartmentModel entity)
     {
-        _dbContext.Apartments.Update(entity);
+        _dbContext.ApartmentModel.Update(entity);
 
         return await _dbContext.SaveChangesAsync();
     }
