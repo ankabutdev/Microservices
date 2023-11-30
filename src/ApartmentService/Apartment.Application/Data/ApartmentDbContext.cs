@@ -10,20 +10,26 @@ public class ApartmentDbContext : DbContext
     public ApartmentDbContext(DbContextOptions<ApartmentDbContext> options)
         : base(options)
     {
-        Database.Migrate();
-        //var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
-        //try
-        //{
-        //    if (databaseCreator != null)
-        //    {
-        //        if (!databaseCreator.CanConnect()) databaseCreator.CreateAsync();
-        //        if (!databaseCreator.HasTables()) databaseCreator.CreateTablesAsync();
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    Console.WriteLine(ex.Message);
-        //}
+        //Database.Migrate();
+        var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+        try
+        {
+            if (databaseCreator is null)
+            {
+                throw new Exception();
+            }
+
+            if (!databaseCreator.CanConnect())
+            {
+                databaseCreator.CreateAsync();
+                //if (!databaseCreator.HasTables())
+                databaseCreator.CreateTablesAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 
     public virtual DbSet<ApartmentModel> ApartmentModel { get; set; }

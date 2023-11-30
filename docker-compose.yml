@@ -1,5 +1,8 @@
 version: '3.4'
 
+networks:
+  backend:
+
 services:
 
   sqldata:
@@ -9,14 +12,18 @@ services:
     environment:
       - SA_PASSWORD=YourStrong@Passw0rd
       - ACCEPT_EULA=Y
+    networks:
+      - backend
     ports:
-      - "7773:1433"
+      - 7773:1433 
 
   apartment.api:
     image: ${DOCKER_REGISTRY-}apartmentapi
     build:
       context: .
       dockerfile: src/ApartmentService/Apartment.API/Dockerfile
+    networks:
+      - backend
 
       #----------------------------
   car.api:

@@ -13,11 +13,7 @@ public static class DataAccessConfiguration
 
         builder.Services.AddDbContext<ApartmentDbContext>(options =>
         {
-            options.UseSqlServer(connectionString,
-                sqlServerOptionsAction: sql =>
-                {
-                    sql.MigrationsAssembly("Apartment.API");
-                });
+            options.UseSqlServer(connectionString);
 
         });
 
